@@ -1,0 +1,89 @@
+<h1>Registro de Alumnos</h1>
+<div class="row">
+  <div class="col-6">
+    <form (ngSubmit)="onSubmit()" [formGroup]="alumnoForms">
+      <div class="mb-4">
+        <label for="matricula" class="form-label">Matricula</label>
+        <input type="text" class="form-control" formControlName="matricula" name="matricula" id="matricula">
+        <div *ngIf="alumnoForms.get('matricula')?.touched &&
+        alumnoForms.get('matricula')?.errors?.['required']" class="alert alert-danger">
+          Este campo es reuqerido
+        </div>
+
+      </div>
+      <div class="mb-4">
+        <label for="nombre" class="form-label">Nombre</label>
+        <input type="text" class="form-control" formControlName="nombre" name="nombre" id="nombre">
+        <div *ngIf="alumnoForms.get('nombre')?.touched &&
+        alumnoForms.get('nombre')?.errors?.['required']" class="alert alert-danger">
+          Este campo es reuqerido
+        </div>
+
+      </div>
+      <div class="mb-4">
+        <label for="edad" class="form-label">Edad</label>
+        <input type="text" class="form-control" formControlName="edad" name="edad" id="edad">
+        <div *ngIf="alumnoForms.get('edad')?.touched &&
+        alumnoForms.get('edad')?.errors?.['required']" class="alert alert-danger">
+          Este campo es reuqerido
+        </div>
+
+      </div>
+      <div class="mb-4">
+        <label for="foto" class="form-label">Foto</label>
+        <input type="text" class="form-control" formControlName="foto" name="foto" id="foto">
+        <div *ngIf="alumnoForms.get('foto')?.touched &&
+        alumnoForms.get('foto')?.errors?.['required']" class="alert alert-danger">
+          Este campo es reuqerido
+        </div>
+
+      </div>
+      <div class="mb-4">
+        <label for="correo" class="form-label">Correo</label>
+        <input type="text" class="form-control" formControlName="correo" name="correo" id="correo">
+        <div *ngIf="alumnoForms.get('correo')?.touched &&
+        alumnoForms.get('correo')?.errors?.['required']" class="alert alert-danger">
+          Este campo es reuqerido
+        </div>
+
+      </div>
+      <div class="mb-4">
+        <label for="calif" class="form-label">Calificación</label>
+        <input type="text" class="form-control" formControlName="calif" name="calif" id="calif">
+        <div *ngIf="alumnoForms.get('calif')?.touched &&
+        alumnoForms.get('calif')?.errors?.['required']" class="alert alert-danger">
+          Este campo es reuqerido
+        </div>
+
+      </div>
+      <div class="d-grid gap-2 col-4 float-end">
+        <button class="btn btn-info btn-lg" type="submit">Guardar</button>
+      </div>
+    </form>
+  </div>
+  <div class="col-6">
+    <h1>Registros</h1>
+    <table class="table table-striped table-hover">
+      <thead>
+        <tr>
+          <th>Matricula</th>
+          <th>Nombre</th>
+          <th>Edad</th>
+          <th>Correo</th>
+          <th>Calificación</th>
+          <th>Foto</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let registro of registros">
+          <td>{{ registro.matricula }}</td>
+          <td>{{ registro.nombre }}</td>
+          <td>{{ registro.edad }}</td>
+          <td>{{ registro.correo }}</td>
+          <td>{{ registro.calificacion }}</td>
+          <td>{{ registro.foto }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -13,6 +13,7 @@ export class IricComponent {
   imageMargin: number = 2;
   muestraImg: boolean = true;
   listFilter: string = '';
+  alumnoTitle!: string
 
   showImage(): void {
     this.muestraImg = !this.muestraImg;
@@ -27,7 +28,8 @@ export class IricComponent {
       nombre: 'Pedro',
       edad: 23,
       correo: 'pedro@gmail.com',
-      foto: 'https://cdn.pixabay.com/photo/2016/11/18/23/38/child-1837375_960_720.png'
+      foto: 'https://cdn.pixabay.com/photo/2016/11/18/23/38/child-1837375_960_720.png',
+      calif: 10
     },
 
     {
@@ -35,7 +37,8 @@ export class IricComponent {
       nombre: 'Paulina',
       edad: 23,
       correo: 'paulina@gmail.com',
-      foto: 'https://cdn.pixabay.com/photo/2016/11/18/23/38/child-1837375_960_720.png'
+      foto: 'https://cdn.pixabay.com/photo/2016/11/18/23/38/child-1837375_960_720.png',
+      calif: 9
     },
 
     {
@@ -43,7 +46,12 @@ export class IricComponent {
       nombre: 'Dario',
       edad: 27,
       correo: 'dario@gmail.com',
-      foto: 'https://cdn.pixabay.com/photo/2016/11/18/23/38/child-1837375_960_720.png'
+      foto: 'https://cdn.pixabay.com/photo/2016/11/18/23/38/child-1837375_960_720.png',
+      calif: 5
     },
   ];
+
+  onCalificaClick(message: string): void {
+    this.alumnoTitle = `${message}`;
+  }
 }

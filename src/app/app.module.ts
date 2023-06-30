@@ -6,11 +6,15 @@ import { NameIdgs902 } from './utl/idgs902.component';
 import { Idgs902Component } from './utl/idgs902/idgs902.component';
 import { IricComponent } from './utl/iric/iric.component';
 import { MenuComponent } from './utl/menu/menu.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SumaComponent } from './utl/fromularios/suma/suma.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { OperasModule } from './utl/fromularios/operas/operas.module';
 import { Distancia2pModule } from './distancia2p/distancia2p.module';
+import { CalificacionAlumComponent } from './utl/calificacion-alum/calificacion-alum.component';
+import { AlumnoFilterPipe } from './utl/alumno-filter.pipe';
+import { AlumnoReactiveComponent } from './formularios/alumno-reactive/alumno-reactive.component';
+import { AppRoutingModule } from './app.routing.module';
 
 
 
@@ -23,6 +27,9 @@ import { Distancia2pModule } from './distancia2p/distancia2p.module';
     IricComponent,
     MenuComponent,
     SumaComponent,
+    CalificacionAlumComponent,
+    AlumnoFilterPipe,
+    AlumnoReactiveComponent,
 
 
   ],
@@ -31,7 +38,9 @@ import { Distancia2pModule } from './distancia2p/distancia2p.module';
     FormsModule,
     BrowserAnimationsModule,
     OperasModule,
-    Distancia2pModule
+    Distancia2pModule,
+    ReactiveFormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
